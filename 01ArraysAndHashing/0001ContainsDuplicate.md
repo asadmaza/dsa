@@ -31,7 +31,7 @@ Given an integer array `nums`, return `true` if any value appears **at least twi
 
 **Data Structure: HashSet** 
 *Definition:* Form of a Hash Table data structure that usually holds large number of elements. Using HashSet we can quickly search, add, and remove elements. Used to lookup if an element is a part of the set.
-*Application to Problem:* It allows us to insert elements that do not exist in HashSet and we can also check whether a value exists in a HashSet
+*Application to Problem:* Allows us to insert elements that do not exist in HashSet and we can also check whether a value exists in a HashSet
 
 **Efficiency:** Tradeoff - sacrifice space complexity to achieve better time complexity.
 
