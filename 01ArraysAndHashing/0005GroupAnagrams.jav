@@ -1,28 +1,31 @@
 // Best solution with Time Complexity O(M*N*26) => O(M*N) where N is average length of input string, M is number of input strings
 class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
+        // Create ans HashMap to store list of anagrams, key is String for character count
         HashMap<String, List<String>> ans = new HashMap<>();
-
+        // Loop through every string in array
         for (String str : strs) {
+            // Create array to count character in string (a-z)
             int[] charCount = new int[26];
-
+            // Count frequency of characters in string
             for (char c : str.toCharArray()) {
                 charCount[c - 'a']++;
             }
-
+            // Create String key 1#...#0 (a#...#z where no. is char count)
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < 26; i++) {
                 sb.append('#');
                 sb.append(charCount[i]);
             }
             String key = sb.toString();
-            
+            // If ans doesn't have matching key, add it with a new list
             if (!ans.containsKey(key)) {
                 ans.put(key, new ArrayList<>());
             }
+            // Add current string to list of anagrams
             ans.get(key).add(str);
         }
-
+        // Extract values of ans HashMap and convert and return array
         return new ArrayList<>(ans.values());
     }
 }
